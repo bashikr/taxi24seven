@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 import "./App.css";
 import {
@@ -29,8 +30,14 @@ function LocationMarker() {
     );
 }
 
+const DateDisplay = ({ today }) => <p>{today}</p>;
+
+DateDisplay.propTypes = {
+    today: PropTypes.instanceOf(Date),
+};
+
 function App() {
-    let [today, ] = useState(dayjs(new Date()));
+    let [today] = useState(dayjs(new Date()));
     const position = [57.70887, 11.97456];
     return (
         <div className="App">
@@ -42,7 +49,7 @@ function App() {
                 <Marker position={position}>
                     <Popup>
                         A pretty CSS3 popup. <br /> Easily customizable.
-                        {today.format("YYYY-MM-DD")}
+                        <DateDisplay today={today.format("YYYY-MM-DD")} />
                     </Popup>
                 </Marker>
                 <LocationMarker />
