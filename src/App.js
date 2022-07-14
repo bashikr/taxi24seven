@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-
+import Button from '@mui/material/Button';
 import "./App.css";
 import {
     MapContainer,
@@ -50,6 +50,7 @@ function App() {
                     <Popup>
                         A pretty CSS3 popup. <br /> Easily customizable.
                         <DateDisplay today={today.format("YYYY-MM-DD")} />
+                        <Button variant="contained">Hello World</Button>
                     </Popup>
                 </Marker>
                 <LocationMarker />
