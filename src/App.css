@@ -8,9 +8,10 @@
 }
 
 .leaflet-container {
-    width: 50%;
-    height: 50vh;
-    margin: 20vh auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
