@@ -14,7 +14,7 @@ import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import { NavLink } from "react-router-dom";
 
 const pages = ["home", "about", "counter"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Profile", "Home", "Logout", "Signup", "Login"];
 
 export function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = useState(null);
@@ -178,15 +178,39 @@ export function ResponsiveAppBar() {
                             onClose={handleCloseUserMenu}
                         >
                             {settings.map((setting) => (
-                                <MenuItem
+                                <NavLink
                                     key={setting}
-                                    onClick={handleCloseUserMenu}
+                                    style={({ isActive }) => ({
+                                        color: isActive ? "red" : "",
+                                        textDecoration: "none",
+                                    })}
+                                    to={`/${setting}`}
                                 >
-                                    <Typography textAlign="center">
+                                    <Typography textAlign="center" margin={1}>
                                         {setting}
                                     </Typography>
-                                </MenuItem>
+                                </NavLink>
                             ))}
+
+                            {/* { this.props.authenticated ? (
+                                    <ul>
+                                        <li>
+                                            <NavLink to="/profile">Profile</NavLink>
+                                        </li>
+                                        <li>
+                                            <a onClick={this.props.onLogout}>Logout</a>
+                                        </li>
+                                    </ul>
+                                ): (
+                                    <ul>
+                                        <li>
+                                            <NavLink to="/login">Login</NavLink>        
+                                        </li>
+                                        <li>
+                                            <NavLink to="/signup">Signup</NavLink>        
+                                        </li>
+                                    </ul>
+                                )} */}
                         </Menu>
                     </Box>
                 </Toolbar>

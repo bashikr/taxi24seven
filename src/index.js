@@ -9,6 +9,7 @@ import About from "./features/about/About";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import { ResponsiveAppBar } from "./features/header/ResponsiveAppBar";
+import Signup from "./features/user/signup/Signup";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -23,6 +24,8 @@ root.render(
                     <Route path="/home" element={<App />} />
                     <Route path="/counter" element={<Counter />} />
                     <Route path="/about" element={<About />} />
+                    <Route path="/signup" element={<Signup />} />
+
                     <Route
                         path="*"
                         element={
