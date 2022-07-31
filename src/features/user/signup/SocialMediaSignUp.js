@@ -12,7 +12,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 export default function SocialMediaSignUp() {
     return (
         <Container>
-            <Box sx={{ height: "90vh" }}>
+            <Box sx={{ height: "100px", width: "100%" }}>
                 <Typography textAlign="center" margin={1}>
                     Sign up with Social media account
                 </Typography>
@@ -26,28 +26,33 @@ export default function SocialMediaSignUp() {
                         href={GOOGLE_AUTH_URL}
                         variant="outlined"
                         size="large"
+                        style={{height: "48px", width:"130px", border: "1", borderColor: "#dee3ed", borderRadius: "7px"}}
+                        
                     >
                         <GoogleIcon
-                            style={{ color: "#FF0000" }}
-                            fontSize="large"
+                            style={{ color: "#FF0000", width: "100px"}}
+                            fontSize="medium"
                         />
                     </Button>
                     <Button
                         variant="outlined"
                         href={FACEBOOK_AUTH_URL}
                         size="large"
+                        style={{height: "48px", width:"130px", border: "1", borderColor: "#dee3ed", borderRadius: "7px"}}
+
                     >
-                        <FacebookIcon color="primary" fontSize="large" />
+                        <FacebookIcon color="primary" fontSize="medium"  style={{ width: "100px" }} />
                     </Button>
 
                     <Button
                         variant="outlined"
-                        size="large"
                         href={GITHUB_AUTH_URL}
+                        size="large"
+                        style={{height: "48px", width:"130px", border: "1", borderColor: "#dee3ed", borderRadius: "7px"}}
                     >
                         <GithubIcon
-                            style={{ color: "black" }}
-                            fontSize="large"
+                            style={{ color: "black", width: "100px" }}
+                            fontSize="medium"
                         />
                     </Button>
                 </Stack>
