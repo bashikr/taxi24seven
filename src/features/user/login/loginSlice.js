@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { signupRequest } from "./signupAPI";
+import { loginRequest } from "./loginAPI";
 import { toast } from "react-toastify";
 
 const initialState = {
@@ -7,34 +7,36 @@ const initialState = {
     status: "idle",
 };
 
-export const signupAsync = createAsyncThunk(
-    "signup/signupRequest",
+export const loginAsync = createAsyncThunk(
+    "login/loginRequest",
     async (amount) => {
-        const response = await signupRequest(amount);
+        const response = await loginRequest(amount);
         return response.data;
     }
 );
 
 export const counterSlice = createSlice({
-    name: "signup",
+    name: "login",
     initialState,
     extraReducers: (builder) => {
         builder
-            .addCase(signupAsync.pending, (state) => {
+            .addCase(loginAsync.pending, (state) => {
                 state.status = "loading";
             })
-            .addCase(signupAsync.fulfilled, (state, action) => {
+            .addCase(loginAsync.fulfilled, (state, action) => {
                 state.status = "idle";
                 state.value += action.payload;
+
                 toast.success(
                     "You're successfully registered. Please login to continue!"
                 );
                 setTimeout(() => {
-                    window.location.href = "/login";
+                    window.location.href = "/";
                 }, 2000);
             })
-            .addCase(signupAsync.rejected, (state, action) => {
+            .addCase(loginAsync.rejected, (state, action) => {
                 state.status = "error";
+
                 toast.warn(
                     (action.error && action.error.message) ||
                         "Oops! Something went wrong. Please try again!"

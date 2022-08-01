@@ -1,21 +1,21 @@
 import { Chip, Container, Divider, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import SignupForm from "./SignupForm";
-import SocialMediaSignUp from "./SocialMediaSignUp";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LoginForm from "./LoginForm";
+import SocialMediaLogin from "./SocialMediaLogin";
 
-export default function Signup() {
+export default function Login() {
     return (
         <Container style={{ align: "center", width: "60%" }}>
-            <SocialMediaSignUp />
+            <SocialMediaLogin />
             <Divider>
                 <Chip label="OR" variant="outlined" />
             </Divider>
-            <SignupForm />
+            <LoginForm />
             <Typography marginLeft={3} marginTop={2}>
-                Already have an account? <Link to="/login">Login!</Link>
+               New user? <Link to="/signup">Sign up!</Link>
             </Typography>
             <ToastContainer autoClose={2000} />
         </Container>

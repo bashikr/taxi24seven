@@ -10,6 +10,7 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import { ResponsiveAppBar } from "./features/header/ResponsiveAppBar";
 import Signup from "./features/user/signup/Signup";
+import Login from "./features/user/login/Login";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -25,6 +26,7 @@ root.render(
                     <Route path="/counter" element={<Counter />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/signup" element={<Signup />} />
+                    <Route path="/login" element={<Login />} />
 
                     <Route
                         path="*"
