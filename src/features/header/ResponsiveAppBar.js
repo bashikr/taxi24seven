@@ -99,9 +99,15 @@ export function ResponsiveAppBar() {
                                     key={page}
                                     onClick={handleCloseNavMenu}
                                 >
-                                    <Typography textAlign="center">
-                                        {page}
-                                    </Typography>
+                                      <NavLink
+                                    style={({ isActive }) => ({
+                                        color: isActive ? "red" : "",
+                                        textDecoration: "none",
+                                    })}
+                                    to={`/${page}`}
+                                >
+                                    {page}
+                                </NavLink>
                                 </MenuItem>
                             ))}
                         </Menu>

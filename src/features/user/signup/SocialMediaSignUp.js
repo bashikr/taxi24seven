@@ -26,11 +26,16 @@ export default function SocialMediaSignUp() {
                         href={GOOGLE_AUTH_URL}
                         variant="outlined"
                         size="large"
-                        style={{height: "48px", width:"130px", border: "1", borderColor: "#dee3ed", borderRadius: "7px"}}
-                        
+                        style={{
+                            height: "48px",
+                            width: "130px",
+                            border: "1",
+                            borderColor: "#dee3ed",
+                            borderRadius: "7px",
+                        }}
                     >
                         <GoogleIcon
-                            style={{ color: "#FF0000", width: "100px"}}
+                            style={{ color: "#FF0000", width: "100px" }}
                             fontSize="medium"
                         />
                     </Button>
@@ -38,17 +43,32 @@ export default function SocialMediaSignUp() {
                         variant="outlined"
                         href={FACEBOOK_AUTH_URL}
                         size="large"
-                        style={{height: "48px", width:"130px", border: "1", borderColor: "#dee3ed", borderRadius: "7px"}}
-
+                        style={{
+                            height: "48px",
+                            width: "130px",
+                            border: "1",
+                            borderColor: "#dee3ed",
+                            borderRadius: "7px",
+                        }}
                     >
-                        <FacebookIcon color="primary" fontSize="medium"  style={{ width: "100px" }} />
+                        <FacebookIcon
+                            color="primary"
+                            fontSize="medium"
+                            style={{ width: "100px" }}
+                        />
                     </Button>
 
                     <Button
                         variant="outlined"
                         href={GITHUB_AUTH_URL}
                         size="large"
-                        style={{height: "48px", width:"130px", border: "1", borderColor: "#dee3ed", borderRadius: "7px"}}
+                        style={{
+                            height: "48px",
+                            width: "130px",
+                            border: "1",
+                            borderColor: "#dee3ed",
+                            borderRadius: "7px",
+                        }}
                     >
                         <GithubIcon
                             style={{ color: "black", width: "100px" }}
