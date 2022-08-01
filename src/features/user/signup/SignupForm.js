@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Grid, TextField, FormControl, Button } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Container } from "@mui/system";
-import { selectSignupObj, signupAsync } from "./signupSlice";
+import { signupAsync } from "./signupSlice";
 import { useDispatch } from "react-redux";
 
 export default function SignupForm() {

@@ -44,5 +44,4 @@ export const counterSlice = createSlice({
     },
 });
 
-export const selectSignupObj = (state) => state.signup.value;
 export default counterSlice.reducer;
