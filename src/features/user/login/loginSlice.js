@@ -15,7 +15,7 @@ export const loginAsync = createAsyncThunk(
     }
 );
 
-export const counterSlice = createSlice({
+export const loginSlice = createSlice({
     name: "login",
     initialState,
     extraReducers: (builder) => {
@@ -25,18 +25,15 @@ export const counterSlice = createSlice({
             })
             .addCase(loginAsync.fulfilled, (state, action) => {
                 state.status = "idle";
-                state.value += action.payload;
+                state.value = action.payload;
 
-                toast.success(
-                    "You're successfully registered. Please login to continue!"
-                );
+                toast.success("You're successfully logged in!");
                 setTimeout(() => {
-                    window.location.href = "/";
+                    window.location.href = "/profile";
                 }, 2000);
             })
             .addCase(loginAsync.rejected, (state, action) => {
                 state.status = "error";
-
                 toast.warn(
                     (action.error && action.error.message) ||
                         "Oops! Something went wrong. Please try again!"
@@ -45,4 +42,6 @@ export const counterSlice = createSlice({
     },
 });
 
-export default counterSlice.reducer;
+export const selectLogin = (state) => state.login.value;
+
+export default loginSlice.reducer;

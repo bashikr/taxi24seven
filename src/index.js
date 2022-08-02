@@ -11,6 +11,8 @@ import "./index.css";
 import { ResponsiveAppBar } from "./features/header/ResponsiveAppBar";
 import Signup from "./features/user/signup/Signup";
 import Login from "./features/user/login/Login";
+import Profile from "./features/user/profile/Profile";
+import OAuth2RedirectHandler from "./features/user/OAuth2RedirectHandler";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -27,6 +29,8 @@ root.render(
                     <Route path="/about" element={<About />} />
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/oauth2/redirect" element={<OAuth2RedirectHandler />} />
 
                     <Route
                         path="*"

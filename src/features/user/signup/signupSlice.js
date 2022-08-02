@@ -15,7 +15,7 @@ export const signupAsync = createAsyncThunk(
     }
 );
 
-export const counterSlice = createSlice({
+export const signupSlice = createSlice({
     name: "signup",
     initialState,
     extraReducers: (builder) => {
@@ -43,4 +43,4 @@ export const counterSlice = createSlice({
     },
 });
 
-export default counterSlice.reducer;
+export default signupSlice.reducer;

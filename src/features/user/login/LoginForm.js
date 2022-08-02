@@ -3,6 +3,9 @@ import { Grid, TextField, FormControl, Button } from "@mui/material";
 import { Container } from "@mui/system";
 import { loginAsync } from "./loginSlice";
 import { useDispatch } from "react-redux";
+import { ACCESS_TOKEN } from "../../../constants/constants";
+import { loginRequest } from "./loginAPI";
+import { toast } from "react-toastify";
 
 export default function LoginForm() {
     const dispatch = useDispatch();
@@ -23,6 +26,17 @@ export default function LoginForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         dispatch(loginAsync(formValues));
+
+        loginRequest(formValues)
+            .then((response) => {
+                localStorage.setItem(ACCESS_TOKEN, response.data.accessToken);
+            })
+            .catch((error) => {
+                toast.error(
+                    (error && error.message) ||
+                        "Oops! Something went wrong. Please try again!"
+                );
+            });
     };
 
     return (
